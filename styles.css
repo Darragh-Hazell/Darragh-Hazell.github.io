@@ -2,3 +2,7 @@ body {
     background-image: url('https://media.giphy.com/media/xc6ijwxQwcPfO/giphy.gif');
     background-size: cover;
 }
+h1 {
+    text-align: center;
+    color: red;
+}
