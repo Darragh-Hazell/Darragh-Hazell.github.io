@@ -49,7 +49,7 @@
     height: 320px;
     width: 600px;
     display: grid;
-    grid-template-rows: 100px 140px 60px 50px 70px;
+    grid-template-rows: 100px 150px 50px 40px 70px;
     align-items: left;
     justify-items: left;
     text-align: left;
@@ -84,34 +84,46 @@
 }
 
 .badge_picture {
-    padding-top: 20px;
-    padding-left: 30px;
-    width: 100px;
-    height: 100px;
+    background-color: #20262c;
+    
+    width: 600px;
+    height: 150px;
 }
 
 .picture {
+    padding: 30px;
     border-radius: 50%;
-    width: 100%;
-    height: 100%;
+    height: 100px;
+    width: auto;
 }
 
 .badge_name {
+    background-color: #20262c;
     font-weight: bolder;
     font-size: xx-large;
+    width: 600px;
+}
+
+.badge_name_text {
     padding-left: 30px;
 }
 
 .badge_profession {
+    width: 570px;
+    padding-left: 30px;
+    height: auto;
+    background-color: #20262c;
     font-weight: lighter;
     font-size: x-large;
-    padding-left: 30px;
 }
 
 .badge_current {
+    background-color: #20262c;
     font-weight: lighter;
     font-size: larger;
     padding-left: 30px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
 }
 
 a:link, a:visited {
