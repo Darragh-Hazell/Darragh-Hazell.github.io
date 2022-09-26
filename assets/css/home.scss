@@ -1,145 +1,238 @@
 ---
 ---
 
-// html {
-//     margin: 0;
-//     height: 100%;
-//     width: 100%;
-// }
-
-.page {
-    width: 100vw;
+body {
     height: 100vh;
-    display: grid;
-    grid-template-rows: 1fr 2fr 1fr;
-    grid-auto-columns: 1fr;
+    width: auto;
     background-color: black;
-    color: white;
-    // justify-content: center;
-    // align-content: center;
-}
-
-// .top_section {
-//     display: grid;
-//     justify-items: center;
-// }
-
-// .banner {
-//     display: grid;
-//     width: 300px;
-//     height: 50px;
-//     border-radius: 7px;
-//     background-color: #38434f;
-//     grid-template-columns: repeat(3, 1fr);
-// }
-
-.badges {
-    max-width: 100%;
-    height: auto;
     display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
-    grid-auto-rows: 1fr;
-    grid-row: 2;
-    align-items: center;
-    justify-items: center;
-    text-align: left;
-}
-
-.badge {
-    height: 320px;
-    width: 600px;
-    display: grid;
-    grid-template-rows: 100px 150px 50px 40px 70px;
-    align-items: left;
-    justify-items: left;
-    text-align: left;
+    grid-template-columns: 2fr 6fr 2fr;
+    grid-template-rows: 1fr 0.5fr 1fr 6fr 1fr 0.5fr 1fr;
+    
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.badge_header {
-    width: 600px;
-    height: 100px;
+.header {
+    grid-column: 2;
+    grid-row: 2;
+    min-height: 60px;
+    border-radius: 7px;
+    background-color: #38434f;
+    // outline-style: solid;
+    // outline-color: white;
+    // outline-width: 2px;
+
+    display: grid;
+    grid-template-columns: 0.1fr 1fr 0.1fr 1fr 0.1fr 1fr 0.1fr;
+    grid-template-rows: 0.1fr 1fr 0.1fr;
+
+    
+    // text-size-adjust: auto;
+}
+
+.header_button_1 {
+    grid-row: 2;
+    grid-column: 2;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    
+}
+
+.header_button_1:link, .header_button_1:visited {
+    text-decoration: none;
+}
+
+.header_button_1:hover, .header_button_1:active {
+    border-radius: 7px;
+    background-color: #20262c;
+}
+
+.header_about {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+
+.header_button_2 {
+    grid-row: 2;
+    grid-column: 4;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+
+.header_button_2:link, .header_button_2:visited {
+    text-decoration: none;
+}
+
+.header_button_2:hover, .header_button_2:active {
+    border-radius: 7px;
+    background-color: #20262c;
+}
+
+.header_name {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+
+.header_button_3 {
+    grid-row: 2;
+    grid-column: 6;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+
+.header_button_3:link, .header_button_3:visited {
+    text-decoration: none;
+}
+
+.header_button_3:hover, .header_button_3:active {
+    border-radius: 7px;
+    background-color: #20262c;
+}
+
+.header_projects {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+
+.header_text {
+    display: inline-block;
+    color: white;
+    text-transform: capitalize;
+    font-size: x-large;
+}
+
+.badge_wrapper {
+    grid-column: 2;
+    grid-row: 4;
+    display: grid;
+    grid-template-columns: 1fr 8fr 1fr;
+    grid-template-rows: 1fr 8fr 1fr;
+    justify-items: center;
+}
+
+.badge {
+    grid-column: 2;
+    grid-row: 2;
+    min-height: 300px;
+    max-height: 450px;
+    min-width: 600px;
+    max-width: 700px;
+    display: grid;
+    grid-template-rows: 1fr 2fr 0.5fr 0.75fr 0.75fr 0.5fr;
+    background-color: #20262c;
+    border-radius: 15px;
+}
+
+.badge_top {
+    grid-row: 1;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
     background-color: #38434f;
+
     display: grid;
-    justify-items: left;
+    grid-template-columns: 0.5fr 4fr 5.5fr;
+    grid-template-rows: 1fr 8fr 1fr;
+}
+
+.logo_wrapper {
+    grid-column: 2;
+    grid-row: 2;
+    display: grid;
+    justify-items: center;
     align-items: center;
 }
 
 .logo {
-    // max-width: 100%;
+    display: inline-block;
+    color: white;
+}
+
+.picture_wrapper {
+    grid-row: 2;
+    display: grid;
+    grid-template-columns: 0.5fr 2.5fr 7fr;
+    grid-template-rows: 1fr 8fr 1fr;
+}
+
+.picture_border {
+    grid-column: 2;
+    grid-row: 2;
     display: grid;
     justify-items: left;
     align-items: center;
-    padding-left: 30px;
-    // padding-top: 5px;
-    // padding-bottom: 5px;
-}
-
-.logo_svg {
-    display: inline-block;
-    width: 80%;
-    height: 80%;
-}
-
-.badge_picture {
-    background-color: #20262c;
-    
-    width: 600px;
-    height: 150px;
 }
 
 .picture {
-    padding: 30px;
+    display: inline-block;
     border-radius: 50%;
-    height: 100px;
+    height: 120px;
     width: auto;
 }
 
-.badge_name {
-    background-color: #20262c;
-    font-weight: bolder;
+.name_wrapper {
+    display: grid;
+    grid-template-columns: 0.5fr 9fr 0.5fr;
+    justify-items: left;
+    align-items: baseline;
+}
+
+.name {
+    grid-column: 2;
+    display: inline-block;
+    color: white;
+    text-transform: capitalize;
     font-size: xx-large;
-    width: 600px;
-    height: 60px;
+    font-weight: bolder;
 }
 
-.badge_name_text {
-    padding-left: 30px;
+.profession_wrapper {
+    display: grid;
+    grid-template-columns: 0.5fr 9fr 0.5fr;
+    justify-items: left;
+    align-items: center;
 }
 
-.badge_profession {
-    height: 60px;
-    width: 570px;
-    padding-left: 30px;
-    height: auto;
-    background-color: #20262c;
-    font-weight: lighter;
+.profession {
+    grid-column: 2;
+    display: inline-block;
+    color: white;
+    text-transform: capitalize;
     font-size: x-large;
 }
 
-.badge_current {
-    background-color: #20262c;
-    font-weight: lighter;
-    font-size: larger;
-    padding-left: 30px;
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
+.current_wrapper {
+    display: grid;
+    grid-template-columns: 0.5fr 9fr 0.5fr;
+    justify-items: left;
+    align-items: center;
 }
 
-a:link, a:visited {
+.current {
+    grid-column: 2;
+    display: inline-block;
+    color: white;
+    text-transform: capitalize;
+    font-size: large;
+}
+
+.footer {
+    grid-column: 2;
+    grid-row: 6;
+}
+
+
+.profile_link:link, .profile_link:visited {
     color: white;
     text-decoration: none;
 }
 
-a:hover, a:active{
+.profile_link:hover, .profile_link:active{
     color: white;
-    text-decoration: underline solid;
+    text-decoration: solid underline;
 }
-
-// .badges {
-    // display: flex;
-    // justify-content: center;
-    // align-content: center;
-// }
