@@ -16,9 +16,9 @@ entries:
       show_more_text: See archive...
       show_more_url: archive.html
 
-  - title: posts by category
+  - title: projects
     post_list:
-      category: example2
+      category: projects
       show_more: true
       show_more_text: See more posts...
       show_more_url: example2-archive.html
