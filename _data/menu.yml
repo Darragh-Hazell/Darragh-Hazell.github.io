@@ -29,11 +29,3 @@ entries:
         url: linkedin.com/in/darragh-hazell
       - title: GitHub
         url: https://github.com/darragh-hazell
-  
-  - title: another list
-    entries:
-      - title: with subitems
-        entries:
-          - title: with subsubitems
-          - title: example page
-            url: about
