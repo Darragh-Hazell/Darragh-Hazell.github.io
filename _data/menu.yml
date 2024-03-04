@@ -2,29 +2,33 @@
 # https://github.com/riggraz/no-style-please#customize-the-menu
 
 entries:
-  - title: info
-    entries:
-      - title: Linkedin
-        url: linkedin.com/in/darragh-hazell
-      - title: github
-        url: https://github.com/darragh-hazell
 
-  - title: all posts
+  - title: About
+    entries:
+      - title: Software Engineer
+        entries:
+          - title: 4 years of Python experience
+
+  - title: Posts
     post_list:
       limit: 5
       show_more: true
       show_more_text: See archive...
       show_more_url: archive.html
 
-  - title: projects
+  - title: Projects
     post_list:
       category: projects
       show_more: true
       show_more_text: See more posts...
       show_more_url: example2-archive.html
 
-  - title: rss
-    url: feed.xml
+  - title: Socials
+    entries:
+      - title: Linkedin
+        url: linkedin.com/in/darragh-hazell
+      - title: GitHub
+        url: https://github.com/darragh-hazell
   
   - title: another list
     entries:
@@ -33,6 +37,3 @@ entries:
           - title: with subsubitems
           - title: example page
             url: about
-  - title: PRO TIP
-    entries:
-      - title: to edit this menu, edit _data/menu.yml file
