@@ -1,5 +1,7 @@
 ---
 layout: post
+title: "Work Log Automation"
+category: projects
 slug: hr example
 ---
 
