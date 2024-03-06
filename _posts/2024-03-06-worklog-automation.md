@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Automating Work Log Creation Using R Sweave and a Python Discord Bot Frontend"
+title: "Automating Document Creation Using R Sweave and a Python Discord Bot Frontend"
 category: projects
 ---
 
