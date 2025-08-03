@@ -1,0 +1,17 @@
+---
+.title = "Devlog - 2025",
+.date = @date("2025-08-03T00:00:00"),
+.author = "Darragh Hazell",
+.layout = "devlog.shtml",
+.draft = false,
+--- 
+[]($section.id('about'))
+## About this Devlog
+
+This page lists entries for the current devlog, for past entries consult the
+[devlog archive](/devlog/).
+
+You can [subscribe to this page via RSS]($link.page('devlog').alternative('rss')).
+
+## [Basic Text Adventure]($section.id("2025-08-03T00:00:00"))
+This is the third entry.

@@ -1,6 +1,6 @@
 Site {
-    .title = "Darragh's Software",
-    .host_url = "https://example.com",
+    .title = "TYRO",
+    .host_url = "https://Darragh-Hazell.github.io",
     .content_dir_path = "content",
     .layouts_dir_path = "layouts",
     .assets_dir_path = "assets",
