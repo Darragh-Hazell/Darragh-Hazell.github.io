@@ -30,7 +30,7 @@ RSS feed will generate a separate item per devlog entry, creating a
 "twitter-like" feed.
 
 This can be a useful pattern for thoughts that are too small for a full blog post
-so consider giving it a try!
+so consider giving it a try.
 
 The name "devlog" comes from the fact that this kind of microblogging feed works
 well when you have an open source project and you want to give small updates to
