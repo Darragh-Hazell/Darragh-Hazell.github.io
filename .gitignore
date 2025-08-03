@@ -1,5 +1,5 @@
 _site
-public
+./public
 .DS_store
 .sass-cache
 .jekyll-cache
