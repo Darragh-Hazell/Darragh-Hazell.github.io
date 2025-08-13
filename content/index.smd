@@ -1,5 +1,5 @@
 ---
-.title = "Home",
+.title = "",
 .date = @date("2025-08-03T00:00:00"),
 .author = "Darragh Hazell",
 .layout = "index.shtml",
@@ -15,7 +15,11 @@ My [devlog]($link.page('devlog/2025')) will describe my personal programming pro
 and progress across the current year. 
 For access to previous devlogs visit the [devlog archive]($link.page('devlog')).
 
-The [projects]($link.page('projects')) page lists all of the *mostly* finished projects and information related to them.
-
 To find more information about me, for either recruitment or stalker-ish reasons, please 
 visit the [about]($link.page('about')) section.
+
+Below are some of my projects if you want to have a geez:
+
+## Projects
+
+[](<$image.siteAsset('pusheen-burrito.gif').alt('Cartoon cat in burrito').size(400, 400)>)

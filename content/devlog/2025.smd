@@ -13,5 +13,7 @@ This page lists entries for the current devlog, for past entries consult the
 
 You can [subscribe to this page via RSS]($link.page('devlog').alternative('rss')).
 
-## [Basic Text Adventure]($section.id("2025-08-03T00:00:00"))
-This is the third entry.
+## [Creating This Site]($section.id("2025-08-13T20:35:00"))
+
+This site was created using the 'Zine' project,
+a Zig based static site generator.

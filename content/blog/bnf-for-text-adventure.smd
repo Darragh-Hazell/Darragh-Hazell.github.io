@@ -1,0 +1,181 @@
+---
+.title = "Defining a BNF for a Text Adventure",
+.date = @date("2025-08-04T20:07:00"),
+.author = "Darragh Hazell",
+.layout = "post.shtml",
+.draft = true,
+--- 
+
+Recently I've been looking into developing a classic text adventure style game.
+In the process I've been looking into BNF and attempting to define a BNF style 
+grammer for the user's interaction.
+
+## BNF Explained
+
+[BNF](https://en.wikipedia.org/wiki/Backus%E2%80%93Naur_form), for those who 
+actually have a life, is "Backus–Naur Form." It's a system for defining the syntax 
+of a language using sequences of 'terminals' and 'non-terminals'. This explanation 
+probably doesn't mean much so I'll provide some examples that'll make it a bit more
+clear.
+
+**`SHIT-LANG v0.0.1`**
+```
+shit = "shit", shittable ;
+shittable = "myself" | "my pants" ;
+```
+
+> # [Note]($block.collapsible(false))
+> Technically the syntax I'm using is actually 
+> [EBNF](https://en.wikipedia.org/wiki/Extended_Backus%E2%80%93Naur_form), 
+> Extended Backus-Naur Form, but who really gives a shit
+
+Above we have a BNF grammar which describes a simple language, I will refer to it as
+**`SHIT-LANG`**. One where the user can input either "`shit myself`" or "`shit my pants`". 
+**`SHIT-LANG`** is defined on two lines, which describe a **`shit`** and a **`shittable`**. 
+These are the 'non-terminals' of the language, called as such because you will have to look up
+it's definition to see what values it accepts. For example, to see what valid **`shit`** 
+sequences there are you have to look at what valid **`shittable`** sequences there are.
+
+A **`shit`** is composed of a sequences of "`shit`" and a **`shittable`**. 
+A **`shittable`** can either be "myself" or "my pants". The values "`shit`", "`myself`", and "`my pants`" 
+are all 'terminals', because they are literal values that require no further look ups, as 
+opposed to the 'non-terminals'.
+
+We can expand **`SHIT-LANG`**'s accepted deviations through some of the basic logic of BNF. 
+For example, we can allow the specification to accept just "`shit`" as valid, through 
+making the **`shittable`** optional with the **`[ ]`** syntax. 
+For the sake of it we'll also add another **`shittable`**, "`your pants`".
+This can be seen below in **`SHIT-LANG v0.0.2`**.
+
+**`SHIT-LANG v0.0.2`**
+```
+shit = "shit", [ shittable ] ;
+shittable = "myself" | "my pants" | "your pants" ;
+```
+
+
+In the grand scheme of things this optional has only expanded the accepted sequences of the 
+language by about 1, or 2 if you include the extra **`shittable`**. 
+This is still technically a 50% to 100% increase, as can be seen below, but there are 
+considerably more powerful logical features of BNF that we can use to expand our 
+language's valid sequences to be near infinite. 
+
+**`SHIT-LANG v0.0.1 Valid Sequences`**
+```
+shit myself
+shit my pants
+```
+**`SHIT-LANG v0.0.2 Valid Sequences`**
+```
+shit
+shit myself
+shit my pants
+shit your pants
+```
+
+To demonstrate this we will allow for numeric amounts to be appended at the 
+end of a **`shit`**. 
+To do this we simply add another optional for a sequence of **`amount`**
+and "`times`".
+The **`amount`** terminal is defined as a sequence of a **`digit`** and a 
+**`{ digit }`**. 
+This **`{ }`** syntax means that the sequence inside of it can either
+occur not at all or occur many times, so in actuality **`amount`** can be any amount of
+**`digit`** values in a sequence or just one **`digit`**.
+A **`digit`** is just a number between 0 and 9, fairly self explanatory.
+
+**`SHIT-LANG v0.0.3`**
+```
+shit = "shit", [ shittable ], [ amount, "times" ] ;
+shittable = "myself" | "my pants" | "your pants" ;
+
+amount = digit, { digit } ;
+digit = "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" ;
+```
+
+Unfortunately, this does allow for some undesirable sequences. Such as 
+"`shit 1 times`" or "`shit your pants 000000000 times`".
+To prevent this we need to be more explicit in our grammar and what is 
+allowed. 
+We can accomplish this by separating out the digits into different ranges, 
+in this case 0-9, 1-9, and 2-9. 
+The amount can than be specified as being either a single digit of 2 or more,
+or multiple digits with the first being greater than 0.
+We use the grouping syntax **`( )`** to make this relationship explicit
+for the multiple digit amount.
+These changes can be seen below.
+
+**`SHIT-LANG v0.0.4`**
+```
+shit = "shit", [ shittable ], [ amount, "times" ] ;
+shittable = "myself" | "my pants" | "your pants" ;
+
+amount = digit above one | ( digit above zero, digit, { digit } ) ;
+digit = "0" | digit above zero ;
+digit above zero = "1" | digit above one ;
+digit above one = "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" ;
+```
+**`SHIT-LANG v0.0.4 Valid Sequences`**
+```
+shit
+shit myself
+shit my pants
+shit your pants
+shit 2 times
+shit myself 2 times
+shit my pants 2 times
+shit your pants 2 times
+shit 3 times
+...
+```
+
+Alright, to be honest I'm not really sure what any of this accomplished, 
+lets go back to what this is actually meant to be about, a text adventure grammar.
+
+## Back to the Text Adventure
+
+Realistically it is not overly complicated to define a grammar for a basic text
+adventure style game, you could literally just have the following:
+
+```
+command = verb, noun ;
+verb = "take" | "go" | "eat" (* etc *) ;
+noun = letter, { letter } ;
+letter = "a" | "b" | "c" | "d" | "e" | "f" | "g" | "h" | "i" | "j" | "k" | "l" 
+       | "m" | "n" | "o" | "p" | "q" | "r" | "s" | "t" | "u" | "v" | "w" | "x" 
+       | "y" | "z" ;
+```
+
+In this situation the parser would not be responsible to catch any incorrect input
+beyond something that obviously isn't a combination of a defined verb and noun.
+It would not care about the fact the user might write "`eat north`" as 
+opposed to "`go north`" or "`eat cake`", to it all of these would be valid inputs.
+
+**`TAG BNF`**
+```
+command = ( open | talk ), [ with ]
+
+(* exp commands *)
+open exp = open, [ "the" ], noun ;
+talk = "talk", [ "to" | "with" ], noun ;
+move = ( "move" | "go" ), "to", noun ;
+
+(* ctx commands *)
+help = "help"
+open = "open"
+take = "take" | "grab"
+talk = "talk"
+use = "use"
+equip = "equip"
+attack = "attack"
+leave = "leave"
+
+(* modifiers *)
+with = "with", [ "the" ], noun ;
+
+(* basically just any word *)
+noun = letter, { letter } ;
+letter = "a" | "b" | "c" | "d" | "e" | "f" | "g" | "h" | "i" | "j" | "k" | "l" 
+       | "m" | "n" | "o" | "p" | "q" | "r" | "s" | "t" | "u" | "v" | "w" | "x" 
+       | "y" | "z" ;
+```

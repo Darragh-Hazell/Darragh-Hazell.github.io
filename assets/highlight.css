@@ -37,3 +37,9 @@ code.ziggy .numeric.constant {
 code.ziggy .function {
   color: var(--blue);
 }
+
+/* BNF */
+
+code.bnf {
+  color: var(--cyan);
+}
